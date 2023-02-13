@@ -12,13 +12,13 @@ const weather = new Weather('Paris');
 
 
 weather.getWeatherFromLocation().then(data =>{
-    const sunrise = new Date(data.sys.sunrise)
-    console.log(sunrise.getHours());
-    console.log(sunrise.getMinutes());
+    console.log(new Date(data.sys.sunset * 1000).toLocaleTimeString());
 
     const weatherData = {
         deacription : data.weather[0].description,
-        temp: data.main.temp - 273.15, 
+        temp: data.main.temp - 273.15,
+        sunrise: new Date(data.sys.sunrise * 1000).toLocaleTimeString(),
+        sunset: new Date(data.sys.sunset * 1000).toLocaleTimeString(),
     }
     // Assign data to Variables in Object 
     // Pass Weather Object to Storage class to construct storage instances

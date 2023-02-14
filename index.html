@@ -10,20 +10,23 @@
     <title>Weather App </title>
 </head>
 <body class="bg-primary">
-    <div class="container">
+    <div class="container d-flex justify-content-center align-items-center flex-column">
         <div class="row">
           <h1>Weather</h1>
         </div>
-        <div class="row vh-100 d-flex justify-content-center align-items-center">
+        <div class="row w-25">
+          <input type="search" name="location" id="locationSearch">
+        </div>
+        <div class="row d-flex flex-column justify-content-center align-items-center">
 ">        <div class="card text-white bg-success mb-3" style="max-width: 20rem;">
               <div class="card-header">
                 <h2 class="card-title">Location</h2>
               </div>
               <div class="card-body">
-                <p class="card-text"><strong>Description</strong></p>
-                <p class="card-text">Temperature</p>
-                <p class="card-text">Sunrise</p>
-                <p class="card-text">Sunset</p>
+                <p class="card-text" id="weatherDesc"><strong>Description</strong></p>
+                <p class="card-text" id="temp">Temperature</p>
+                <p class="card-text" id="sunrise">Sunrise</p>
+                <p class="card-text"id="sunset">Sunset</p>
               </div>
           </div>
         </div>

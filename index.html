@@ -14,8 +14,13 @@
         <div class="row">
           <h1>Weather</h1>
         </div>
+        <div class="row">
+        </div>
         <div class="row w-25">
-          <input type="search" name="location" id="locationSearch">
+          <form class="d-flex text-light">
+            <input class="form-control me-sm-2 text-light display-6" type="search" placeholder="Type in a city" id="search">
+            <button class="btn btn-success my-2 my-sm-0" type="submit" id="submit">Get Weather</button>
+          </form>
         </div>
         <div class="row d-flex flex-column justify-content-center align-items-center" id="dataDisplay">
         </div>

@@ -17,9 +17,7 @@ export class Storage{
             weatherData = JSON.parse(localStorage.getItem('weatherData'))
         }
         weatherData.push(weather);
-        console.log(weatherData);
         localStorage.setItem('weatherData', JSON.stringify(weatherData))
-        console.log(localStorage.getItem('weatherData'));
     }
 
 }

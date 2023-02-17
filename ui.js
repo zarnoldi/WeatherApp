@@ -8,13 +8,12 @@ export class UI{
     }
     
     displayWeatherData(){
-      console.log('this is run');
-      console.log(this.location);
         const dataDisplay = document.getElementById('dataDisplay'); 
+        dataDisplay.innerHTML = ''; 
         const weatherData = document.createElement('div'); 
         weatherData.innerHTML = 
         `
-        <div class="card text-white bg-success m-3 text-center" style="width: 20rem;">
+        <div class="card text-white bg-warning m-3 text-center" style="width: 20rem;">
               <div class="card-header">
                 <h2 class="card-title">${this.location}</h2>
               </div>
@@ -27,7 +26,6 @@ export class UI{
           </div>
         `
         dataDisplay.appendChild(weatherData); 
-        console.log(dataDisplay);
     }
 
    

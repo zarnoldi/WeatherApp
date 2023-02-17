@@ -4,17 +4,17 @@ import { UI } from "./ui.js";
 
 
 // Add html input 
-// User enters data
+
 // Validate data 
 // User clicks Get Weather 
-// App gets string from input 
-// App Creates new Instance of Weather with Location string added 
 
-// instantiate classes 
-const weather = new Weather('Paris'); 
-const storage = new Storage(); 
+document.getElementById('submit').addEventListener('click', (e)=>{
 
-weather.getWeatherFromLocation().then(data =>{
+  const searchText = document.getElementById('search').value;
+  const weather = new Weather(searchText); 
+  const storage = new Storage();
+
+  weather.getWeatherFromLocation().then(data =>{
     // Assign data to Variables in weather Object 
     const weatherData = {
         location : data.name,
@@ -27,15 +27,16 @@ weather.getWeatherFromLocation().then(data =>{
     storage.storeWeatherInLocalStorage(JSON.stringify(weatherData));
     return weatherData; 
 }).then((weatherData)=>{
-    console.log(weatherData);
     // Pass Object to UI class to Constructor UI instance
     const ui = new UI(weatherData.location, weatherData.description, weatherData.temp, weatherData.sunrise, weatherData.sunset); 
-    console.log(ui);
     // Call UI Method to create HTML elements
     ui.displayWeatherData();
 }).catch(error => {
-     
+    console.log(error);
     // If error:
-    // call UI Method which displays Error message 
-    
+    // call UI Method which displays Error message
 })
+    e.preventDefault(); 
+})
+
+ 

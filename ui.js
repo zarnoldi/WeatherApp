@@ -19,14 +19,12 @@ export class UI{
               </div>
               <div class="card-body">
                 <p class="card-text" id="weatherDesc"><strong>${this.description}</strong></p>
-                <p class="card-text" id="temp">${this.temp}</p>
-                <p class="card-text" id="sunrise">${this.sunrise}</p>
-                <p class="card-text"id="sunset">${this.sunset}</p>
+                <p class="card-text" id="temp"><strong>Current Temperature: </strong>${this.temp}&#8451</p>
+                <p class="card-text" id="sunrise"><strong>Sunrise: </strong>${this.sunrise}</p>
+                <p class="card-text"id="sunset"><strong>Sunset: </strong>${this.sunset}</p>
               </div>
           </div>
         `
         dataDisplay.appendChild(weatherData); 
     }
-
-   
 }

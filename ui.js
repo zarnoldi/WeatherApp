@@ -1,3 +1,7 @@
+
+const dataDisplay = document.getElementById('dataDisplay'); 
+
+
 export class UI{
     constructor(location, description, temp, sunrise, sunset){
         this.location = location;
@@ -8,7 +12,6 @@ export class UI{
     }
     
     displayWeatherData(){
-        const dataDisplay = document.getElementById('dataDisplay'); 
         dataDisplay.innerHTML = ''; 
         const weatherData = document.createElement('div'); 
         weatherData.innerHTML = 
@@ -27,4 +30,20 @@ export class UI{
         `
         dataDisplay.appendChild(weatherData); 
     }
+}
+
+
+export function errorUI() {
+  dataDisplay.innerHTML = ''; 
+  const errorMessage = document.createElement('div'); 
+  errorMessage.innerHTML = 
+        `
+       <div class="alert alert-dismissible alert-danger m-4">
+       <strong>Error: </strong> <a href="#" class="alert-link">Looks Like thats not a city name please try again
+       </div>
+        `
+        dataDisplay.appendChild(errorMessage); 
+        setTimeout(()=>{
+          dataDisplay.innerHTML = '';
+        }, 5000)
 }

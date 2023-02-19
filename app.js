@@ -1,6 +1,6 @@
 import { Weather} from "./weather.js";
 import { Storage} from "./storage.js";
-import { UI } from "./ui.js";
+import { UI, errorUI } from "./ui.js";
 
 
 // Add html input 
@@ -33,6 +33,7 @@ document.getElementById('submit').addEventListener('click', (e)=>{
     ui.displayWeatherData();
 }).catch(error => {
     console.log(error);
+    errorUI(); 
     // If error:
     // call UI Method which displays Error message
 })
